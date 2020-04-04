@@ -1,0 +1,113 @@
+[
+    // エディタ上にいるときに名前をつけながらファイルの作成
+    {
+        "key": "ctrl+alt+n",
+        "command": "explorer.newFile",
+        "when": "editorTextFocus"
+    },
+    // エディタ、端末移動
+    // ctrl (j or @)
+    {
+        "key": "ctrl+[BracketLeft]",
+        "command": "workbench.action.terminal.focus",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+[BracketLeft]",
+        "command": "workbench.action.focusFirstEditorGroup",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "workbench.action.terminal.focus",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "workbench.action.focusFirstEditorGroup",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+shift+0",
+        "command": "-workbench.action.terminal.new"
+    },
+
+    // タブ移動系
+    // 削除
+    {
+        "key": "ctrl+[",
+        "command": "-editor.action.outdentLines",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+]",
+        "command": "-editor.action.indentLines",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    // 移動
+    {
+        "key": "ctrl+[",
+        "command": "workbench.action.previousEditor"
+    },
+    {
+        "key": "ctrl+]",
+        "command": "workbench.action.nextEditor"
+    },
+
+    // サイドバー処理
+    // サイドバー <-> エディタ 移動
+    {
+        "key": "ctrl+b",
+        "command": "workbench.action.quickOpenView",
+        "when" : "editorTextFocus && !sideBarVisible"
+    },
+    // エディタまたはサイドバーにいるときにescapeを押すとサイドバーを閉じる
+    {
+        "key": "escape",
+        "command": "workbench.action.toggleSidebarVisibility",
+        "when": "sideBarFocus && sideBarVisible || editorTextFocus && sideBarVisible"
+    },
+
+    // サイドバー操作
+    // ファイル選択
+    // ファイル作成
+    {
+        "key": "ctrl+n",
+        "command": "explorer.newFile",
+        "when": "explorerViewletFocus && listFocus &&explorerViewletVisible && !inputFocus"
+    },
+    // フォルダ作成
+    {
+        "key": "ctrl+shift+n",
+        "command": "explorer.newFolder",
+        "when": "explorerViewletFocus && listFocus &&explorerViewletVisible && !inputFocus"
+    },
+    // 削除
+    {
+        "key": "ctrl+d",
+        "command": "deleteFile",
+        "when": "explorerViewletFocus && listFocus &&explorerViewletVisible && !inputFocus"
+    },
+    // リネーム
+    {
+        "key": "ctrl+enter",
+        "command": "renameFile",
+        "when": "explorerViewletFocus && listFocus &&explorerViewletVisible && !inputFocus"
+    },
+    // フォルダ折りたたみ
+    {
+        "key": "backspace",
+        "command": "list.collapse",
+        "when": "explorerViewletFocus && listFocus &&explorerViewletVisible && !inputFocus"
+    },
+    {
+        "key": "alt+k",
+        "command": "list.focusUp",
+        "when": "explorerViewletFocus && listFocus &&explorerViewletVisible && !inputFocus"
+    },
+    {
+        "key": "alt+j",
+        "command": "list.focusDown",
+        "when": "explorerViewletFocus && listFocus &&explorerViewletVisible && !inputFocus"
+    }
+]
