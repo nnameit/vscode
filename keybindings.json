@@ -1,10 +1,19 @@
 [
     // エディタ上にいるときに名前をつけながらファイルの作成
     {
-        "key": "ctrl+alt+n",
+        "key": "ctrl+shift+n",
         "command": "explorer.newFile",
-        "when": "editorTextFocus"
+        // "when": "editorTextFocu"
     },
+    {
+        "key": "ctrl+alt+n",
+        "command": "workbench.action.newWindow"
+    },
+    {
+        "key": "ctrl+shift+n",
+        "command": "-workbench.action.newWindow"
+    },
+
     // エディタ、端末移動
     // ctrl (j or @)
     {
@@ -59,7 +68,8 @@
     {
         "key": "ctrl+b",
         "command": "workbench.action.quickOpenView",
-        "when" : "editorTextFocus && !sideBarVisible"
+        // "when" : "editorTextFocus && !sideBarVisible"
+        "when" : "!sideBarVisible && !terminalFocus"
     },
     // エディタまたはサイドバーにいるときにescapeを押すとサイドバーを閉じる
     {
